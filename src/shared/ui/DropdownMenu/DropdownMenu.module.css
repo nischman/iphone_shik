@@ -1,0 +1,102 @@
+.dropdownMenu {
+  position: fixed;
+  top: 64px; /* Точно на уровне навигации */
+  left: 0;
+  width: 100vw;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Только нижняя тень */
+  transform: translateY(-100%);
+  opacity: 0;
+  transition:
+    all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    z-index 0.1s ease;
+  z-index: 999; /* Ниже хедера (z-[1001]) */
+  pointer-events: none;
+}
+
+.dropdownMenu.active {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1000; /* Выше при открытии */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.content {
+  padding: 50px 20px;
+}
+
+.categoryTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin: 0 0 30px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.itemsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 равные колонки */
+  gap: 0;
+  max-width: 100%;
+}
+
+.menuItem {
+  display: block;
+  padding: 12px 0;
+  color: #1d1d1f;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5; /* Межстрочный интервал для лучшей читаемости */
+}
+
+.menuItem:hover {
+  color: #007aff; /* Синий Apple */
+  transform: translateX(4px); /* Смещение вправо при hover */
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .dropdownMenu {
+    display: none; /* Скрываем на мобильных */
+  }
+}
+
+@media (max-width: 1024px) {
+  .itemsGrid {
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки на планшетах */
+  }
+
+  .content {
+    padding: 40px 20px;
+  }
+
+  .menuItem {
+    padding: 10px 0;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 640px) {
+  .itemsGrid {
+    grid-template-columns: 1fr; /* 1 колонка на маленьких экранах */
+  }
+
+  .content {
+    padding: 30px 20px;
+  }
+
+  .categoryTitle {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}

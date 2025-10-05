@@ -1,0 +1,25 @@
+.searchButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  color: #000;
+}
+
+.searchButton:hover {
+  background-color: #f5f5f5;
+}
+
+.icon {
+  transition: transform 0.2s ease;
+}
+
+.searchButton:hover .icon {
+  transform: scale(1.1);
+}

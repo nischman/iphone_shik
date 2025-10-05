@@ -1,0 +1,63 @@
+import { NavigationItem, MenuData } from '../types';
+
+export const NAVIGATION_ITEMS: NavigationItem[] = [
+  { label: 'iPhone', href: '/iphone', hasDropdown: true },
+  { label: 'Mac', href: '/mac', hasDropdown: true },
+  { label: 'iPad', href: '/ipad', hasDropdown: true },
+  { label: 'Watch', href: '/watch', hasDropdown: true },
+  { label: 'AirPods', href: '/airpods', hasDropdown: true },
+  { label: 'Аксессуары', href: '/accessories', hasDropdown: true },
+  { label: 'Аудио', href: '/audio', hasDropdown: true },
+  { label: 'Гаджеты', href: '/gadgets', hasDropdown: true },
+  { label: 'Бренды', href: '/brands', hasDropdown: false },
+];
+
+export const MENU_DATA: MenuData = {
+  iPhone: [
+    'Все iPhone',
+    'iPhone 17',
+    'iPhone 17 Pro',
+    'iPhone 17 Pro Max',
+    'iPhone Air',
+    'iPhone 16 Pro Max',
+    'iPhone 16 Pro',
+    'iPhone 16 Plus',
+    'iPhone 16',
+    'iPhone 15 Pro Max',
+    'iPhone 15',
+    'iPhone 14',
+    'iPhone 13',
+    'iPhone 11',
+  ],
+  Mac: [
+    'Все Mac',
+    'MacBook Air',
+    'Mac MacBook Pro 13"',
+    'MacBook Pro 14"',
+    'MacBook Pro 16"',
+    'iMac 24"',
+    'Mac Studio',
+    'Mac Pro',
+    'Mac mini',
+  ],
+  iPad: ['Все iPad', 'iPad Pro 12.9"', 'iPad Pro 11"', 'iPad Air', 'iPad', 'iPad mini'],
+  Watch: [
+    'Все Apple Watch',
+    'Apple Watch Ultra 2',
+    'Apple Watch Series 10',
+    'Apple Watch Series 9',
+    'Apple Watch SE',
+  ],
+  AirPods: ['Все AirPods', 'AirPods Pro 2', 'AirPods 3', 'AirPods Max'],
+  Аксессуары: [
+    'Чехлы для iPhone',
+    'Чехлы для iPad',
+    'Зарядные устройства',
+    'Кабели',
+    'Подставки',
+    'Клавиатуры',
+    'Мыши',
+  ],
+  Аудио: ['AirPods', 'Наушники', 'Колонки', 'Аксессуары для аудио'],
+  Гаджеты: ['Apple TV', 'AirTag', 'Умные часы', 'Фитнес трекеры', 'Аксессуары'],
+};

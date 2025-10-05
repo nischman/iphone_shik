@@ -1,0 +1,187 @@
+.megaMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  z-index: 50;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.megaMenu.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.categorySection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.categoryTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+.modelList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.modelLink {
+  display: block;
+  padding: 0.25rem 0;
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.modelLink:hover {
+  color: #ef4444;
+}
+
+.storeInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.storeInfoTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+.storeInfoList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.storeInfoLink {
+  display: block;
+  padding: 0.25rem 0;
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.storeInfoLink:hover {
+  color: #ef4444;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contactTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+.phoneList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.phoneItem {
+  font-size: 0.875rem;
+}
+
+.phoneLabel {
+  color: #6b7280;
+}
+
+.phoneNumber {
+  margin-left: 0.5rem;
+  color: #111827;
+  font-weight: 500;
+}
+
+.socialList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.socialLink:hover {
+  color: #ef4444;
+}
+
+.socialIcon {
+  font-size: 1rem;
+}
+
+/* Анимация появления */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.megaMenu.open {
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+}
