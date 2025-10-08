@@ -1,85 +1,89 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import { DropdownMenu } from '../DropdownMenu/DropdownMenu';
+import * as React from 'react';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from '@/components/ui/navigation-menu';
 import { NAVIGATION_ITEMS, MENU_DATA } from '@/shared/const';
+import { cn } from '@/lib/utils';
 
-export function NavigationMenu() {
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
-
-  const handleMouseEnter = (itemLabel: string) => {
-    // Очищаем предыдущий таймер
-    if (hoverTimeout) {
-      clearTimeout(hoverTimeout);
-      setHoverTimeout(null);
+export function NavigationMenuComponent() {
+  const getItemHref = (item: string, baseHref: string) => {
+    if (item.startsWith('Все')) {
+      return baseHref;
     }
-
-    if (NAVIGATION_ITEMS.find((item) => item.label === itemLabel)?.hasDropdown) {
-      setActiveDropdown(itemLabel);
-    }
+    return `${baseHref}/${item.toLowerCase().replace(/ /g, '-')}`;
   };
-
-  const handleMouseLeave = () => {
-    // Добавляем задержку перед скрытием меню
-    const timeout = setTimeout(() => {
-      setActiveDropdown(null);
-    }, 150); // 150ms задержка
-
-    setHoverTimeout(timeout);
-  };
-
-  // Очищаем таймер при размонтировании компонента
-  useEffect(() => {
-    return () => {
-      if (hoverTimeout) {
-        clearTimeout(hoverTimeout);
-      }
-    };
-  }, [hoverTimeout]);
 
   return (
-    <>
-      <nav
-        className="flex items-center gap-4 xl:gap-8"
-        role="navigation"
-        aria-label="Основная навигация"
-      >
-        <ul className="flex items-center gap-4 xl:gap-8 list-none m-0 p-0">
-          {NAVIGATION_ITEMS.map((item) => (
-            <li
-              key={item.href}
-              className="relative"
-              onMouseEnter={() => handleMouseEnter(item.label)}
-              onMouseLeave={handleMouseLeave}
-            >
-              <Link
-                href={item.href}
-                className="text-sm xl:text-[17px] font-normal text-foreground hover:text-red-500 transition-all duration-300 no-underline px-2 py-1"
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
-
-      {/* Рендерим выпадающие меню для каждой категории */}
-      {Object.entries(MENU_DATA).map(([category, items]) => (
-        <DropdownMenu
-          key={category}
-          isOpen={activeDropdown === category}
-          onMouseEnter={() => handleMouseEnter(category)}
-          onMouseLeave={handleMouseLeave}
-          items={items}
-          category={category}
-          baseHref={
-            NAVIGATION_ITEMS.find((item) => item.label === category)?.href ||
-            `/${category.toLowerCase()}`
-          }
-        />
-      ))}
-    </>
+    <NavigationMenu>
+      <NavigationMenuList className="gap-4 xl:gap-8">
+        {NAVIGATION_ITEMS.map((navItem) => (
+          <NavigationMenuItem key={navItem.href}>
+            {navItem.hasDropdown ? (
+              <>
+                <NavigationMenuTrigger
+                  showChevron={false}
+                  className="text-sm xl:text-[17px] font-normal bg-transparent hover:bg-transparent hover:text-foreground focus:bg-transparent data-[state=open]:bg-transparent data-[active]:bg-transparent px-2"
+                >
+                  {navItem.label}
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[600px] gap-3 p-6 md:grid-cols-3">
+                    {MENU_DATA[navItem.label]?.map((item, index) => (
+                      <ListItem
+                        key={index}
+                        href={getItemHref(item, navItem.href)}
+                        title={item}
+                      />
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </>
+            ) : (
+              <NavigationMenuLink asChild>
+                <Link
+                  href={navItem.href}
+                  className={cn(navigationMenuTriggerStyle(), 'text-sm xl:text-[17px] font-normal bg-transparent hover:bg-transparent hover:text-foreground px-2')}
+                >
+                  {navItem.label}
+                </Link>
+              </NavigationMenuLink>
+            )}
+          </NavigationMenuItem>
+        ))}
+      </NavigationMenuList>
+    </NavigationMenu>
   );
 }
+
+const ListItem = React.forwardRef<
+  React.ElementRef<'a'>,
+  React.ComponentPropsWithoutRef<'a'> & { title: string }
+>(({ className, title, href, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <Link
+          ref={ref}
+          href={href || '#'}
+          className={cn(
+            'block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
+            className
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+        </Link>
+      </NavigationMenuLink>
+    </li>
+  );
+});
+ListItem.displayName = 'ListItem';

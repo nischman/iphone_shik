@@ -1,6 +1,6 @@
 'use client';
 
-import { NavigationMenu } from '@/shared/ui/NavigationMenu/NavigationMenu';
+import { NavigationMenuComponent } from '@/shared/ui/NavigationMenu/NavigationMenu';
 import { CartIcon } from '@/shared/ui/CartIcon/CartIcon';
 import { MobileMenu } from '@/shared/ui/MobileMenu/MobileMenu';
 import { Button } from '@/shared/ui/Button';
@@ -33,7 +33,7 @@ export function Header() {
 
           {/* Desktop Navigation - Center (Desktop) */}
           <div className="hidden lg:flex items-center justify-center flex-1">
-            <NavigationMenu />
+            <NavigationMenuComponent />
           </div>
 
           {/* Mobile Menu Button & Cart - Right (Mobile & Tablet) */}
