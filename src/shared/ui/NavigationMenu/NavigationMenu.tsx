@@ -19,7 +19,9 @@ export function NavigationMenuComponent() {
     if (item.startsWith('Все')) {
       return baseHref;
     }
-    return `${baseHref}/${item.toLowerCase().replace(/ /g, '-')}`;
+    // Convert full item name to slug (e.g., 'iPhone 17 Pro' -> 'iphone-17-pro')
+    const slug = item.toLowerCase().replace(/ /g, '-');
+    return `/${slug}`;
   };
 
   return (

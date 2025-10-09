@@ -18,7 +18,7 @@ export const MENU_DATA: MenuData = {
     'iPhone 17',
     'iPhone 17 Pro',
     'iPhone 17 Pro Max',
-    'iPhone Air',
+    'iPhone 17 Air',
     'iPhone 16 Pro Max',
     'iPhone 16 Pro',
     'iPhone 16 Plus',
