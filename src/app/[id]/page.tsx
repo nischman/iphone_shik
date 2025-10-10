@@ -5,9 +5,9 @@ import { ProductSpecs } from '@/components/product/ProductSpecs';
 import { getIPhoneById, getAllIPhones } from '@/shared/data/iphones';
 
 interface ProductPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 // Generate static params for all iPhones
@@ -19,8 +19,9 @@ export function generateStaticParams() {
 }
 
 // Generate metadata for SEO
-export function generateMetadata({ params }: ProductPageProps) {
-  const product = getIPhoneById(params.id);
+export async function generateMetadata({ params }: ProductPageProps) {
+  const { id } = await params;
+  const product = getIPhoneById(id);
 
   if (!product) {
     return {
@@ -34,8 +35,9 @@ export function generateMetadata({ params }: ProductPageProps) {
   };
 }
 
-export default function ProductPage({ params }: ProductPageProps) {
-  const product = getIPhoneById(params.id);
+export default async function ProductPage({ params }: ProductPageProps) {
+  const { id } = await params;
+  const product = getIPhoneById(id);
 
   if (!product) {
     notFound();

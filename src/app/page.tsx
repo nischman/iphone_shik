@@ -9,9 +9,6 @@ export default function HomePage() {
       <section className="relative overflow-hidden bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-40">
           <div className="text-center space-y-5">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight text-foreground">
-              iPhone Shik
-            </h1>
             <p className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto font-normal">
               Официальный магазин Apple в Кыргызстане
             </p>

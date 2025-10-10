@@ -9,7 +9,6 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
   { label: 'Аксессуары', href: '/accessories', hasDropdown: true },
   { label: 'Аудио', href: '/audio', hasDropdown: true },
   { label: 'Гаджеты', href: '/gadgets', hasDropdown: true },
-  { label: 'Бренды', href: '/brands', hasDropdown: false },
 ];
 
 export const MENU_DATA: MenuData = {
