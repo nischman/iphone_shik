@@ -17,6 +17,10 @@ import { cn } from '@/lib/utils';
 export function NavigationMenuComponent() {
   const getItemHref = (item: string, baseHref: string) => {
     if (item.startsWith('Все')) {
+      // Для "Все iPhone" ведем на страницу каталога
+      if (item === 'Все iPhone') {
+        return '/catalog';
+      }
       return baseHref;
     }
     // Convert full item name to slug (e.g., 'iPhone 17 Pro' -> 'iphone-17-pro')
