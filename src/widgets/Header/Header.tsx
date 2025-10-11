@@ -1,5 +1,6 @@
 'use client';
 
+import { Logo } from '@/shared/ui/Logo/Logo';
 import { NavigationMenuComponent } from '@/shared/ui/NavigationMenu/NavigationMenu';
 import { CartIcon } from '@/shared/ui/CartIcon/CartIcon';
 import { MobileMenu } from '@/shared/ui/MobileMenu/MobileMenu';
@@ -26,6 +27,11 @@ export function Header() {
     <>
       <header className="sticky top-0 z-[1001] w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
+          {/* Logo - Left */}
+          <div className="flex items-center">
+            <Logo />
+          </div>
+
           {/* Desktop Navigation - Center (Desktop) */}
           <div className="hidden lg:flex items-center justify-center flex-1">
             <NavigationMenuComponent />

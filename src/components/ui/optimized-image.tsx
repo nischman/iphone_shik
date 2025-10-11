@@ -4,21 +4,30 @@ interface OptimizedImageProps extends Omit<ImageProps, 'src' | 'alt'> {
   src: string;
   alt: string;
   priority?: boolean;
+  width?: number;
+  height?: number;
 }
 
 /**
  * Оптимизированный компонент изображения на основе next/image
  * Автоматически применяет лучшие практики для производительности
+ * Размеры width и height необязательны (автоматически использует fill если не указаны)
  */
 export function OptimizedImage({
   src,
   alt,
   priority = false,
   sizes,
+  width,
+  height,
+  fill,
   ...props
 }: OptimizedImageProps) {
   // Устанавливаем дефолтные sizes если не указаны
   const defaultSizes = sizes || '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px';
+
+  // Если width и height не указаны, и fill не передан, используем fill автоматически
+  const shouldUseFill = fill !== undefined ? fill : (!width && !height);
 
   return (
     <Image
@@ -26,6 +35,7 @@ export function OptimizedImage({
       alt={alt}
       priority={priority}
       sizes={defaultSizes}
+      {...(shouldUseFill ? { fill: true } : { width, height })}
       {...props}
     />
   );

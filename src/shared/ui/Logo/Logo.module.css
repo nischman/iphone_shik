@@ -3,63 +3,36 @@
   align-items: center;
   text-decoration: none;
   color: inherit;
-  transition: opacity 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.logo:hover {
-  opacity: 0.8;
-}
+/* .logo:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+} */
 
-.logoContainer {
+.logoImageContainer {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  /* background-color: #ff0000; */
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  transition: transform 0.2s ease;
 }
 
-.logoText {
-  font-size: 24px;
-  font-weight: 700;
-  background: linear-gradient(135deg, #ff6b35, #f7931e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: -0.5px;
+.logo:hover .logoImageContainer {
+  transform: scale(1.05);
 }
 
-.appleBadge {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-}
-
-.appleIcon {
-  font-size: 16px;
-  line-height: 1;
-}
-
-.badgeText {
-  font-size: 10px;
-  color: #666;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
+.logoImage {
+  object-fit: contain !important;
 }
 
 @media (max-width: 768px) {
-  .logoText {
-    font-size: 20px;
-  }
-
-  .appleBadge {
-    gap: 1px;
-  }
-
-  .appleIcon {
-    font-size: 14px;
-  }
-
-  .badgeText {
-    font-size: 9px;
+  .logoImageContainer {
+    width: 50px;
+    height: 50px;
   }
 }
