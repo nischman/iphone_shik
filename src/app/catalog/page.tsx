@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { ProductImage } from '@/components/ui/optimized-image';
 import { getAllIPhones } from '@/shared/data/iphones';
 import './catalog.css';
 
@@ -16,11 +17,13 @@ export default function CatalogPage() {
   return (
     <main className="min-h-screen bg-apple-gray">
       <section className="iphone-catalog">
-        <header className="catalog-header">
-          <h1>
-            All models. <span className="subtitle">Take your pick.</span>
-          </h1>
-        </header>
+        <div className="catalog-header">
+          <div className='catalog-shop'>
+            <h1 className='catalog-shop-title'>Купить iPhone</h1>
+          </div>
+          <h2 className='catalog-title'>Все модели. <span className="subtitle">Сделай свой выбор.</span>
+          </h2>
+        </div>
 
         <div className="products-grid">
           {iphones.map((iphone) => {
@@ -37,10 +40,9 @@ export default function CatalogPage() {
                 <h2 className="product-title">{iphone.name}</h2>
 
                 <div className="product-image">
-                  <img
+                  <ProductImage
                     src={iphone.images[0]}
-                    alt={iphone.name}
-                    loading="lazy"
+                    productName={iphone.name}
                   />
                 </div>
 

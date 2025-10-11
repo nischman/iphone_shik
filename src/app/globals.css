@@ -42,6 +42,9 @@
 
     /* Apple-style subtle radius */
     --radius: 0.75rem;
+
+    /* Apple fonts */
+    --font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Icons', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
 
   .dark {
@@ -80,11 +83,21 @@
   * {
     @apply border-border;
   }
+
+  html {
+    font-family: var(--font-family);
+  }
+
   body {
     @apply bg-background text-foreground antialiased;
+    font-family: var(--font-family);
     font-feature-settings: 'kern' 1, 'liga' 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, a, span, div, button, input, textarea, select {
+    font-family: var(--font-family);
   }
 }
 
