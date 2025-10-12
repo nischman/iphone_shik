@@ -25,7 +25,7 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-[1001] w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="sticky top-0 z-[1001] w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" role="banner">
         <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Logo - Left */}
           <div className="flex items-center">
@@ -33,9 +33,9 @@ export function Header() {
           </div>
 
           {/* Desktop Navigation - Center (Desktop) */}
-          <div className="hidden lg:flex items-center justify-center flex-1">
+          <nav className="hidden lg:flex items-center justify-center flex-1" role="navigation" aria-label="Основная навигация">
             <NavigationMenuComponent />
-          </div>
+          </nav>
 
           {/* Mobile Menu Button & Cart - Right (Mobile & Tablet) */}
           <div className="flex lg:hidden items-center gap-2 ml-auto">
@@ -48,8 +48,11 @@ export function Header() {
                   variant="ghost"
                   size="icon"
                   className="hover:bg-accent/50 transition-colors duration-200"
+                  aria-label="Открыть меню"
+                  aria-expanded={isMobileMenuOpen}
+                  aria-controls="mobile-menu"
                 >
-                  <Menu className="h-5 w-5" />
+                  <Menu className="h-5 w-5" aria-hidden="true" />
                   <span className="sr-only">Открыть меню</span>
                 </Button>
               </SheetTrigger>
@@ -60,7 +63,7 @@ export function Header() {
                     Навигационное меню с разделами каталога
                   </SheetDescription>
                 </SheetHeader>
-                <div className="mt-6">
+                <div className="mt-6" id="mobile-menu">
                   <MobileMenu onLinkClick={closeMobileMenu} />
                 </div>
               </SheetContent>

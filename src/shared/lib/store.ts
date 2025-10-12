@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { Cart, CartItem } from '../types';
+import { Cart, CartItem, OrderFormData, initialOrderFormData } from '../types';
 
 // UI Store
 interface UIStore {
@@ -14,6 +14,32 @@ export const useUIStore = create<UIStore>((set) => ({
   toggleMobileMenu: () => set((state) => ({ isMobileMenuOpen: !state.isMobileMenuOpen })),
   closeMobileMenu: () => set({ isMobileMenuOpen: false }),
 }));
+
+// Order Store
+interface OrderStore {
+  orderData: OrderFormData;
+  updateOrderData: (data: Partial<OrderFormData>) => void;
+  resetOrderData: () => void;
+}
+
+export const useOrderStore = create<OrderStore>()(
+  persist(
+    (set) => ({
+      orderData: initialOrderFormData,
+
+      updateOrderData: (data) =>
+        set((state) => ({
+          orderData: { ...state.orderData, ...data },
+        })),
+
+      resetOrderData: () =>
+        set({ orderData: initialOrderFormData }),
+    }),
+    {
+      name: 'order-storage',
+    }
+  )
+);
 
 // Cart Store
 interface CartStore extends Cart {

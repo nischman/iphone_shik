@@ -1,16 +1,47 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
+import { useCartStore } from '@/shared/lib/store';
 import type { IPhoneModel } from '@/shared/data/iphones';
+import type { CartItem } from '@/shared/types';
 
 interface ProductDetailsProps {
   product: IPhoneModel;
 }
 
 export function ProductDetails({ product }: ProductDetailsProps) {
+  const router = useRouter();
+  const { addItem } = useCartStore();
   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
   const [selectedStorage, setSelectedStorage] = useState(product.storage[0]);
+
+  // Функция для создания объекта товара для корзины
+  const createCartItem = (): CartItem => ({
+    id: `${product.id}-${selectedColor.name}-${selectedStorage}`,
+    productId: product.id,
+    name: product.name,
+    slug: product.id,
+    price: product.priceValue,
+    quantity: 1,
+    image: product.images[0],
+    color: selectedColor.name,
+    storage: selectedStorage,
+    maxQuantity: 10, // Можно сделать динамическим
+  });
+
+  // Обработчик для кнопки "Купить" - добавить в корзину и перейти к оформлению
+  const handleBuyNow = () => {
+    addItem(createCartItem());
+    router.push('/checkout');
+  };
+
+  // Обработчик для кнопки "Добавить в корзину"
+  const handleAddToCart = () => {
+    addItem(createCartItem());
+    // TODO: Можно добавить уведомление об успешном добавлении
+  };
 
   return (
     <div className="flex flex-col gap-8">
@@ -85,10 +116,11 @@ export function ProductDetails({ product }: ProductDetailsProps) {
         </div>
       </div>
 
-      {/* Buy Button */}
+      {/* Buy Buttons */}
       <div className="flex flex-col sm:flex-row gap-4">
         <Button
           size="lg"
+          onClick={handleBuyNow}
           className="flex-1 rounded-full h-14 text-lg font-medium hover:scale-105 transition-transform duration-300"
         >
           Купить
@@ -96,6 +128,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
         <Button
           size="lg"
           variant="outline"
+          onClick={handleAddToCart}
           className="flex-1 rounded-full h-14 text-lg font-medium border-2 hover:scale-105 transition-transform duration-300"
         >
           Добавить в корзину

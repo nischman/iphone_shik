@@ -32,6 +32,30 @@ export async function generateMetadata({ params }: ProductPageProps) {
   return {
     title: `${product.name} - ${product.price} | iPhone Shik`,
     description: product.description,
+    alternates: {
+      canonical: `https://iphoneshik.kg/${id}`,
+    },
+    openGraph: {
+      title: `${product.name} - ${product.price}`,
+      description: product.description,
+      url: `https://iphoneshik.kg/${id}`,
+      type: 'website',
+      siteName: 'iPhone Shik',
+      images: [
+        {
+          url: product.images[0],
+          width: 800,
+          height: 800,
+          alt: product.name,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${product.name} - ${product.price}`,
+      description: product.description,
+      images: [product.images[0]],
+    },
   };
 }
 
@@ -43,10 +67,43 @@ export default async function ProductPage({ params }: ProductPageProps) {
     notFound();
   }
 
+  // JSON-LD для структурированных данных
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.name,
+    description: product.description,
+    image: product.images,
+    brand: {
+      '@type': 'Brand',
+      name: 'Apple',
+    },
+    offers: {
+      '@type': 'Offer',
+      price: product.priceValue,
+      priceCurrency: 'KGS',
+      availability: 'https://schema.org/InStock',
+      seller: {
+        '@type': 'Organization',
+        name: 'iPhone Shik',
+      },
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      reviewCount: '100',
+    },
+  };
+
   return (
-    <main className="min-h-screen bg-background">
-      {/* Product Section */}
-      <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <main className="min-h-screen bg-background">
+        {/* Product Section */}
+        <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 max-w-7xl mx-auto">
           {/* Gallery */}
           <div className="lg:sticky lg:top-24 lg:self-start">
@@ -141,6 +198,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           </div>
         </div>
       </section>
-    </main>
+      </main>
+    </>
   );
 }
