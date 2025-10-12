@@ -8,7 +8,8 @@ import { PhoneInput } from '@/shared/ui/PhoneInput/PhoneInput';
 import { Button } from '@/shared/ui/Button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Loader2 } from 'lucide-react';
+import { sendOrderToTelegram } from '@/shared/services/telegram';
 
 export default function CheckoutPage() {
   const router = useRouter();
@@ -84,18 +85,27 @@ export default function CheckoutPage() {
       // Сохраняем данные заказа
       updateOrderData(formData);
 
-      // Здесь можно отправить данные на сервер
-      // await fetch('/api/orders', { method: 'POST', body: JSON.stringify({ ...formData, items, total }) });
+      // Добавляем небольшую задержку для визуального эффекта загрузки
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+
+      // Отправляем заказ в Telegram
+      await sendOrderToTelegram({
+        ...formData,
+        orderId: newOrderId,
+        items,
+        total,
+      });
 
       // Показываем модальное окно успеха
       setShowSuccessModal(true);
 
-      // Очищаем корзину
+      // Очищаем корзину через секунду
       setTimeout(() => {
         clearCart();
       }, 1000);
     } catch (error) {
       console.error('Ошибка при оформлении заказа:', error);
+      alert('Произошла ошибка при оформлении заказа. Пожалуйста, попробуйте еще раз или свяжитесь с нами по телефону.');
     } finally {
       setIsSubmitting(false);
     }
@@ -374,7 +384,14 @@ export default function CheckoutPage() {
                       disabled={isSubmitting}
                       className="w-full rounded-full h-12 sm:h-14 text-base sm:text-lg font-semibold mt-6"
                     >
-                      {isSubmitting ? 'Оформление...' : 'Подтвердить заказ'}
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                          Оформление заказа...
+                        </>
+                      ) : (
+                        'Подтвердить заказ'
+                      )}
                     </Button>
                   </div>
                 </div>
