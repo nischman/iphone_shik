@@ -88,12 +88,12 @@ export default function CartPage() {
                   </div>
                   <div className="flex justify-between text-base">
                     <span className="text-muted-foreground">Сумма:</span>
-                    <span className="font-medium">{total.toLocaleString()} сом</span>
+                    <span className="font-medium">{total.toLocaleString()} ₽</span>
                   </div>
                   <div className="border-t border-border pt-4">
                     <div className="flex justify-between text-lg sm:text-xl font-bold">
                       <span>Итого:</span>
-                      <span>{total.toLocaleString()} сом</span>
+                      <span>{total.toLocaleString()} ₽</span>
                     </div>
                   </div>
                 </div>
@@ -111,7 +111,7 @@ export default function CartPage() {
                     <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span>Бесплатная доставка от 10 000 сом</span>
+                    <span>Бесплатная доставка от 50 000 ₽</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

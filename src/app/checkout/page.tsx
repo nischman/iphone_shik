@@ -248,7 +248,7 @@ export default function CheckoutPage() {
                               type="text"
                               value={formData.address.city}
                               onChange={(e) => handleFieldChange('address.city', e.target.value)}
-                              placeholder="Бишкек"
+                              placeholder="Омск"
                               className={errors.city ? 'border-destructive' : ''}
                             />
                             {errors.city && (
@@ -265,7 +265,7 @@ export default function CheckoutPage() {
                               type="text"
                               value={formData.address.street}
                               onChange={(e) => handleFieldChange('address.street', e.target.value)}
-                              placeholder="Чуй"
+                              placeholder="Ленина"
                               className={errors.street ? 'border-destructive' : ''}
                             />
                             {errors.street && (
@@ -364,7 +364,7 @@ export default function CheckoutPage() {
                               <p className="text-xs text-muted-foreground">{item.storage}</p>
                             )}
                             <p className="text-sm font-semibold mt-1">
-                              {item.quantity} × {item.price.toLocaleString()} сом
+                              {item.quantity} × {item.price.toLocaleString()} ₽
                             </p>
                           </div>
                         </div>
@@ -374,7 +374,7 @@ export default function CheckoutPage() {
                     <div className="space-y-3 border-t border-border pt-4">
                       <div className="flex justify-between text-lg font-bold">
                         <span>Итого:</span>
-                        <span>{total.toLocaleString()} сом</span>
+                        <span>{total.toLocaleString()} ₽</span>
                       </div>
                     </div>
 

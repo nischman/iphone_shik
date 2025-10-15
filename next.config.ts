@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'optim.tildacdn.one',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
     ],
   },
 
@@ -54,9 +58,9 @@ const nextConfig: NextConfig = {
             value: [
               "default-src 'self'",
               "script-src 'self' 'unsafe-eval' 'unsafe-inline'",
-              "style-src 'self' 'unsafe-inline'",
-              "img-src 'self' https://optim.tildacdn.one data: blob:",
-              "font-src 'self' data:",
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+              "img-src 'self' https://optim.tildacdn.one https://images.unsplash.com data: blob:",
+              "font-src 'self' data: https://fonts.gstatic.com",
               "connect-src 'self'",
               "frame-ancestors 'self'",
             ].join('; '),

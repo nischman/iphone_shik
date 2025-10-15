@@ -25,14 +25,14 @@ export function CartItem({ item, onUpdateQuantity, onRemove }: CartItemProps) {
   return (
     <div className="flex gap-4 py-4 border-b border-border">
       <div className="relative w-20 h-20 rounded overflow-hidden bg-muted flex-shrink-0">
-        <Image src={item.image} alt={item.name} fill className="object-cover" />
+        <Image src={item.image} alt={item.name} fill sizes="80px" className="object-cover" />
       </div>
 
       <div className="flex-1 min-w-0">
         <h4 className="font-medium text-foreground truncate">{item.name}</h4>
         {item.color && <p className="text-sm text-muted-foreground">Цвет: {item.color}</p>}
         {item.storage && <p className="text-sm text-muted-foreground">Память: {item.storage}</p>}
-        <p className="font-semibold text-foreground mt-1">{item.price.toLocaleString()} сом</p>
+        <p className="font-semibold text-foreground mt-1">{item.price.toLocaleString()} ₽</p>
       </div>
 
       <div className="flex flex-col items-end gap-2">

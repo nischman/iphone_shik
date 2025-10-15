@@ -21,6 +21,7 @@ export function ProductCard({ product }: ProductCardProps) {
           src={product.image}
           alt={product.name}
           fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover group-hover:scale-105 transition-transform duration-300"
         />
         {product.isNew && (
@@ -51,11 +52,11 @@ export function ProductCard({ product }: ProductCardProps) {
 
         <div className="flex items-center gap-2">
           <span className="text-lg font-bold text-foreground">
-            {product.price.toLocaleString()} сом
+            {product.price.toLocaleString()} ₽
           </span>
           {product.originalPrice && (
             <span className="text-sm text-muted-foreground line-through">
-              {product.originalPrice.toLocaleString()} сом
+              {product.originalPrice.toLocaleString()} ₽
             </span>
           )}
         </div>

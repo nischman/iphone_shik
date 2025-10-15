@@ -12,7 +12,7 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-bold text-foreground mb-4">iPhone Shik</h3>
             <p className="text-sm text-muted-foreground mb-4">
-              Официальный магазин Apple в Кыргызстане. Оригинальная продукция с гарантией.
+              Официальный магазин Apple в России. Оригинальная продукция с гарантией.
             </p>
           </div>
 
@@ -84,9 +84,9 @@ export function Footer() {
           <div>
             <h4 className="text-sm font-semibold text-foreground mb-4">Контакты</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>+996 XXX XXX XXX</li>
-              <li>info@iphoneshik.kg</li>
-              <li>г. Бишкек, ул. Примерная 123</li>
+              <li>+7 XXX XXX-XX-XX</li>
+              <li>info@iphoneshik.ru</li>
+              <li>г. Омск, ул. Ленина 123</li>
             </ul>
           </div>
         </div>

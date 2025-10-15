@@ -21,7 +21,7 @@ export const iphones: IPhoneModel[] = [
   {
     id: 'iphone-17-pro',
     name: 'iPhone 17 Pro',
-    price: '95 990 сом',
+    price: '95 990 ₽',
     priceValue: 95990,
     images: [
       'https://optim.tildacdn.one/stor3661-6262-4331-a633-616433663139/-/format/webp/80630799.webp',
@@ -54,7 +54,7 @@ export const iphones: IPhoneModel[] = [
   {
     id: 'iphone-17-pro-max',
     name: 'iPhone 17 Pro Max',
-    price: '115 990 сом',
+    price: '115 990 ₽',
     priceValue: 115990,
     images: [
       'https://optim.tildacdn.one/stor3661-6262-4331-a633-616433663139/-/format/webp/80630799.webp',
@@ -87,7 +87,7 @@ export const iphones: IPhoneModel[] = [
   {
     id: 'iphone-17',
     name: 'iPhone 17',
-    price: '79 990 сом',
+    price: '79 990 ₽',
     priceValue: 79990,
     images: [
       'https://optim.tildacdn.one/stor3661-6262-4331-a633-616433663139/-/format/webp/80630799.webp',
@@ -121,7 +121,7 @@ export const iphones: IPhoneModel[] = [
   {
     id: 'iphone-17-air',
     name: 'iPhone 17 Air',
-    price: '89 990 сом',
+    price: '89 990 ₽',
     priceValue: 89990,
     images: [
       'https://optim.tildacdn.one/stor3661-6262-4331-a633-616433663139/-/format/webp/80630799.webp',
@@ -153,7 +153,7 @@ export const iphones: IPhoneModel[] = [
   {
     id: 'iphone-16-pro-max',
     name: 'iPhone 16 Pro Max',
-    price: '109 990 сом',
+    price: '109 990 ₽',
     priceValue: 109990,
     images: [
       'https://optim.tildacdn.one/stor3661-6262-4331-a633-616433663139/-/format/webp/80630799.webp',
@@ -186,7 +186,7 @@ export const iphones: IPhoneModel[] = [
   {
     id: 'iphone-16-pro',
     name: 'iPhone 16 Pro',
-    price: '94 990 сом',
+    price: '94 990 ₽',
     priceValue: 94990,
     images: [
       'https://optim.tildacdn.one/stor3661-6262-4331-a633-616433663139/-/format/webp/80630799.webp',
@@ -219,7 +219,7 @@ export const iphones: IPhoneModel[] = [
   {
     id: 'iphone-16-plus',
     name: 'iPhone 16 Plus',
-    price: '84 990 сом',
+    price: '84 990 ₽',
     priceValue: 84990,
     images: [
       'https://optim.tildacdn.one/stor3661-6262-4331-a633-616433663139/-/format/webp/80630799.webp',
@@ -253,7 +253,7 @@ export const iphones: IPhoneModel[] = [
   {
     id: 'iphone-16',
     name: 'iPhone 16',
-    price: '74 990 сом',
+    price: '74 990 ₽',
     priceValue: 74990,
     images: [
       'https://optim.tildacdn.one/stor3661-6262-4331-a633-616433663139/-/format/webp/80630799.webp',
@@ -287,7 +287,7 @@ export const iphones: IPhoneModel[] = [
   {
     id: 'iphone-15-pro-max',
     name: 'iPhone 15 Pro Max',
-    price: '99 990 сом',
+    price: '99 990 ₽',
     priceValue: 99990,
     images: [
       'https://optim.tildacdn.one/stor3661-6262-4331-a633-616433663139/-/format/webp/80630799.webp',
@@ -320,7 +320,7 @@ export const iphones: IPhoneModel[] = [
   {
     id: 'iphone-15',
     name: 'iPhone 15',
-    price: '64 990 сом',
+    price: '64 990 ₽',
     priceValue: 64990,
     images: [
       'https://optim.tildacdn.one/stor3661-6262-4331-a633-616433663139/-/format/webp/80630799.webp',
@@ -354,7 +354,7 @@ export const iphones: IPhoneModel[] = [
   {
     id: 'iphone-14',
     name: 'iPhone 14',
-    price: '59 990 сом',
+    price: '59 990 ₽',
     priceValue: 59990,
     images: [
       'https://optim.tildacdn.one/stor3661-6262-4331-a633-616433663139/-/format/webp/80630799.webp',
@@ -388,7 +388,7 @@ export const iphones: IPhoneModel[] = [
   {
     id: 'iphone-13',
     name: 'iPhone 13',
-    price: '54 990 сом',
+    price: '54 990 ₽',
     priceValue: 54990,
     images: [
       'https://optim.tildacdn.one/stor3661-6262-4331-a633-616433663139/-/format/webp/80630799.webp',
@@ -422,7 +422,7 @@ export const iphones: IPhoneModel[] = [
   {
     id: 'iphone-11',
     name: 'iPhone 11',
-    price: '44 990 сом',
+    price: '44 990 ₽',
     priceValue: 44990,
     images: [
       'https://optim.tildacdn.one/stor3661-6262-4331-a633-616433663139/-/format/webp/80630799.webp',

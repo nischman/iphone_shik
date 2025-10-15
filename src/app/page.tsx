@@ -50,7 +50,7 @@ export default function HomePage() {
               </Button>
             </div>
             <div className="text-sm sm:text-base text-gray-400 pt-4">
-              От 95 990 сом или в рассрочку 0%
+              От 95 990 ₽ или в рассрочку 0%
             </div>
           </div>
         </div>
@@ -88,7 +88,7 @@ export default function HomePage() {
               </Button>
             </div>
             <div className="text-sm sm:text-base text-muted-foreground pt-3">
-              От 79 990 сом или в рассрочку 0%
+              От 79 990 ₽ или в рассрочку 0%
             </div>
           </div>
         </div>
@@ -107,7 +107,7 @@ export default function HomePage() {
                 <Smartphone className="w-12 h-12 text-blue-600" />
                 <div>
                   <h3 className="text-xl font-bold mb-1">iPhone</h3>
-                  <p className="text-sm text-muted-foreground">От 44 990 сом</p>
+                  <p className="text-sm text-muted-foreground">От 44 990 ₽</p>
                 </div>
               </div>
             </Link>
@@ -228,7 +228,7 @@ export default function HomePage() {
               Почему выбирают iPhone Shik
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Официальный магазин Apple техники в Кыргызстане
+              Официальный магазин Apple техники в России
             </p>
           </div>
 
@@ -255,7 +255,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-bold">Быстрая доставка</h3>
               <p className="text-muted-foreground">
-                Бесплатная доставка по Бишкеку от 10 000 сом
+                Бесплатная доставка по Омску от 50 000 ₽
               </p>
             </div>
 

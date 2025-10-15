@@ -7,7 +7,7 @@ export function Logo() {
     <Link href="/" className={styles.logo}>
       <div className={styles.logoImageContainer}>
         <OptimizedImage
-          src="/images/image.svg"
+          src="images/logo.svg"
           alt="iPhone Shik Logo"
           priority
           className={styles.logoImage}
