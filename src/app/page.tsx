@@ -18,8 +18,8 @@ export default function HomePage() {
       
 
       {/* Apple.com Style Hero - iPhone 17 Pro */}
-      <section className="relative w-full min-h-screen overflow-hidden bg-black text-white">
-        <div className="relative w-full h-screen">
+      <section className="first-section relative w-full overflow-hidden bg-black text-white">
+        <div className="first-section__inner relative w-full h-screen">
           <div className="relative w-full h-full">
             {/* Full-screen clickable link overlay */}
             <Link
