@@ -5,10 +5,11 @@ import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { useCartStore } from '@/shared/lib/store';
 import type { IPhoneModel } from '@/shared/data/iphones';
+import type { MacModel } from '@/shared/data/macs';
 import type { CartItem } from '@/shared/types';
 
 interface ProductDetailsProps {
-  product: IPhoneModel;
+  product: IPhoneModel | MacModel;
 }
 
 export function ProductDetails({ product }: ProductDetailsProps) {

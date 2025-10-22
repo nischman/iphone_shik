@@ -1,0 +1,131 @@
+/*Стилизация успеха, при заполнении формы о поступлении товара*/
+    .js-successbox.t-form__successbox.t-text.t-text_md {
+    color: #ffffff;
+    font-size: 18px;
+    border-radius: 18px;
+}
+
+
+/*Стилизация левой стороны карточки товара (скругление углов контейнера 18px)*/
+    .t-slds__container {
+    border-radius: 18px;
+}
+
+/*Стилизация правой стороны карточки товара (ширина контейнера с переносом на нижнюю строку)*/
+    .t762__info.js-store-single-product-info {
+    max-width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+
+/*Изменение обводки выбранного цвета в карточке товара*/
+    .js-product .t-product__option-variants_buttons .t-product__option-input:checked+.t-product__option-checkmark_color:before {
+    border: 1px solid #0171E3;
+}
+
+
+/*Изменение ширины кнопок выбора моделей, одинаковоая ширина с с переносом и с отступами между блоками*/
+    form.t-product__option-variants.t-product__option-variants_custom.t-product__option-variants_buttons.t-product__option-variants_simple {
+    justify-content: space-between;
+    gap: 7px;
+}
+
+
+/*Активная кнопка выбора модели в синий, скругление, одинаковая ширина спецификации*/
+    .js-product .t-product__option-variants_buttons .t-product__option-item_simple.t-product__option-item_active {
+    border: 1.5px solid #0171e3;
+    border-radius: 8px;
+    flex: 0 0 48.5%;
+    margin: 0px;
+}
+
+
+/*Неактивная кнопка выбора модели, скругление, одинаковая ширина спецификации*/
+    label.t-product__option-item.t-product__option-item_buttons.t-product__option-item_simple {
+    border-radius: 8px;
+    flex: 0 0 48.5%;
+    margin: 0px;
+}
+
+
+/*Глобальная стилизация кнопки "купить" в основным товарах*/
+    .t762__btn.t-btn.t-btn_sm {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px; /* Высота кнопки */
+    padding: 0 15px; /* Отступы внутри кнопки */
+    font-size: 12px; /* Размер шрифта по умолчанию для экранов ниже 640px */
+}
+
+    .t762__btn.t-btn.t-btn_sm::before {
+    content: url('https://static.tildacdn.com/tild6533-6335-4764-a136-383933316635/shop.svg');
+    display: inline-block;
+    margin-right: 8px;
+    width: 14px; /* Размер иконки */
+    height: 14px;
+    vertical-align: middle;
+}
+
+/* Медиазапрос для экранов от 640px и выше */
+    @media (min-width: 640px) {
+    .t762__btn.t-btn.t-btn_sm {
+    font-size: 14px; /* Размер шрифта для экранов 640px и выше */
+    }
+}
+
+/*Глобальная стилизация кнопки "купить" в попапах товара*/  
+    .t-store__prod-popup__btn.t-btn.t-btn_sm {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px; /* Высота кнопки */
+    padding: 0 15px; /* Отступы внутри кнопки */
+    font-size: 12px; /* Размер шрифта по умолчанию для экранов ниже 640px */
+}
+  
+    .t-store__prod-popup__btn.t-btn.t-btn_sm::before {
+    content: url('https://static.tildacdn.com/tild6533-6335-4764-a136-383933316635/shop.svg');
+    display: inline-block;
+    margin-right: 8px;
+    width: 14px; /* Размер иконки */
+    height: 14px;
+    vertical-align: middle;
+}
+
+/* Медиазапрос для экранов от 640px и выше */
+    @media (min-width: 640px) {
+    .t-store__prod-popup__btn.t-btn.t-btn_sm {
+    font-size: 14px; /* Размер шрифта для экранов 640px и выше */
+    }
+}
+
+    .t-store__prod-popup__btn.t-btn.t-btn_sm.js-out-of-stock-inserted-block::before {
+    display: none;
+}
+
+
+
+
+/* Отдельная арточка товара, меняет "Нет в наличии" на "Скоро в продаже"*/
+.js-store-prod-sold-out.t-store__card__sold-out-msg.t-name.t-name_xs:after {
+    content: "Скоро в продаже" !important;
+    font-size: 14px !important;
+    color: #b64400;
+}
+
+.js-store-prod-sold-out.t-store__card__sold-out-msg.t-name.t-name_xs {
+    font-size: 0 !important;
+}
+
+/* В каталоге, меняет "Нет в наличии" на "Скоро в продаже"*/
+.js-store-prod-sold-out.t-store__card__sold-out-msg.t-name.t-name_xs:after {
+    content: "Скоро в продаже" !important;
+    font-size: 14px !important;
+    color: #b64400;
+}
+
+.js-store-prod-sold-out.t-store__card__sold-out-msg.t-name.t-name_xs {
+    font-size: 0 !important;
+}

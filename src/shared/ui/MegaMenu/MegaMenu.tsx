@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import styles from './MegaMenu.module.css';
+import './MegaMenu.scss';
 
 interface MegaMenuProps {
   isOpen: boolean;
@@ -160,24 +160,24 @@ export function MegaMenu({ isOpen, onMouseEnter, onMouseLeave }: MegaMenuProps) 
 
   return (
     <div
-      className={`${styles.megaMenu} ${isOpen ? styles.open : ''}`}
+      className={`megaMenu ${isOpen ? 'open' : ''}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <div className={styles.container}>
-        <div className={styles.grid}>
+      <div className="container">
+        <div className="grid">
           {/* Левая колонка - Модели товаров */}
-          <div className={styles.categorySection}>
+          <div className="categorySection">
             {Object.entries(productData).map(([key, category]) => (
               <div
                 key={key}
                 onMouseEnter={() => handleCategoryEnter(key)}
                 onMouseLeave={handleCategoryLeave}
               >
-                <h3 className={styles.categoryTitle}>{category.title}</h3>
-                <div className={styles.modelList}>
+                <h3 className="categoryTitle">{category.title}</h3>
+                <div className="modelList">
                   {category.models.map((model) => (
-                    <Link key={model.href} href={model.href} className={styles.modelLink}>
+                    <Link key={model.href} href={model.href} className="modelLink">
                       {model.name}
                     </Link>
                   ))}
@@ -187,11 +187,11 @@ export function MegaMenu({ isOpen, onMouseEnter, onMouseLeave }: MegaMenuProps) 
           </div>
 
           {/* Средняя колонка - Информация о магазине */}
-          <div className={styles.storeInfo}>
-            <h3 className={styles.storeInfoTitle}>О магазине</h3>
-            <div className={styles.storeInfoList}>
+          <div className="storeInfo">
+            <h3 className="storeInfoTitle">О магазине</h3>
+            <div className="storeInfoList">
               {storeInfo.map((item) => (
-                <Link key={item.href} href={item.href} className={styles.storeInfoLink}>
+                <Link key={item.href} href={item.href} className="storeInfoLink">
                   {item.name}
                 </Link>
               ))}
@@ -199,24 +199,24 @@ export function MegaMenu({ isOpen, onMouseEnter, onMouseLeave }: MegaMenuProps) 
           </div>
 
           {/* Правая колонка - Контактная информация */}
-          <div className={styles.contactInfo}>
-            <h3 className={styles.contactTitle}>{contactInfo.title}</h3>
+          <div className="contactInfo">
+            <h3 className="contactTitle">{contactInfo.title}</h3>
 
             {/* Телефоны */}
-            <div className={styles.phoneList}>
+            <div className="phoneList">
               {contactInfo.phones.map((phone, index) => (
-                <div key={index} className={styles.phoneItem}>
-                  <span className={styles.phoneLabel}>{phone.name}:</span>
-                  <span className={styles.phoneNumber}>{phone.number}</span>
+                <div key={index} className="phoneItem">
+                  <span className="phoneLabel">{phone.name}:</span>
+                  <span className="phoneNumber">{phone.number}</span>
                 </div>
               ))}
             </div>
 
             {/* Социальные сети */}
-            <div className={styles.socialList}>
+            <div className="socialList">
               {contactInfo.social.map((social) => (
-                <Link key={social.href} href={social.href} className={styles.socialLink}>
-                  <span className={styles.socialIcon}>{social.icon}</span>
+                <Link key={social.href} href={social.href} className="socialLink">
+                  <span className="socialIcon">{social.icon}</span>
                   <span>{social.name}</span>
                 </Link>
               ))}

@@ -1,10 +1,10 @@
-import styles from './SearchIcon.module.css';
+import './SearchIcon.scss';
 
 export function SearchIcon() {
   return (
-    <button className={styles.searchButton} aria-label="Поиск">
+    <button className="searchButton" aria-label="Поиск">
       <svg
-        className={styles.icon}
+        className="icon"
         width="20"
         height="20"
         viewBox="0 0 24 24"

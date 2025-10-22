@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { ProductImage } from '@/components/ui/optimized-image';
 import { getAllIPhones } from '@/shared/data/iphones';
-import './catalog.css';
+import './catalog.scss';
 
 export default function CatalogPage() {
   const iphones = getAllIPhones();

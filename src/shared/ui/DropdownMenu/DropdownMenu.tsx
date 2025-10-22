@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
-import styles from './DropdownMenu.module.css';
+import './DropdownMenu.scss';
 
 interface DropdownMenuProps {
   isOpen: boolean;
@@ -47,17 +47,17 @@ export function DropdownMenu({
 
   return (
     <div
-      className={`${styles.dropdownMenu} ${isOpen ? styles.active : ''}`}
+      className={`dropdownMenu ${isOpen ? 'active' : ''}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       ref={menuRef}
     >
-      <div className={styles.container}>
-        <div className={styles.content}>
-          <h3 className={styles.categoryTitle}>{category}</h3>
-          <div className={styles.itemsGrid}>
+      <div className="container">
+        <div className="content">
+          <h3 className="categoryTitle">{category}</h3>
+          <div className="itemsGrid">
             {items.map((item, index) => (
-              <Link key={index} href={getItemHref(item)} className={styles.menuItem}>
+              <Link key={index} href={getItemHref(item)} className="menuItem">
                 {item}
               </Link>
             ))}

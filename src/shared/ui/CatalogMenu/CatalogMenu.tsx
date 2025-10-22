@@ -1,32 +1,32 @@
 'use client';
 
 import { useState } from 'react';
-import styles from './CatalogMenu.module.css';
+import './CatalogMenu.scss';
 
 export function CatalogMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={styles.catalogContainer}>
+    <div className="catalogContainer">
       <button
-        className={styles.catalogButton}
+        className="catalogButton"
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
         aria-label="Открыть каталог"
       >
-        <span className={styles.hamburgerIcon}>
+        <span className="hamburgerIcon">
           <span></span>
           <span></span>
           <span></span>
         </span>
-        <span className={styles.buttonText}>Каталог</span>
+        <span className="buttonText">Каталог</span>
       </button>
 
       {isOpen && (
-        <div className={styles.dropdown}>
-          <div className={styles.dropdownContent}>
-            <p className={styles.placeholder}>Каталог товаров</p>
-            <p className={styles.comingSoon}>Скоро будет доступен</p>
+        <div className="dropdown">
+          <div className="dropdownContent">
+            <p className="placeholder">Каталог товаров</p>
+            <p className="comingSoon">Скоро будет доступен</p>
           </div>
         </div>
       )}

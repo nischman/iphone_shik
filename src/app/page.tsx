@@ -1,11 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Smartphone, Tablet, Laptop, Watch, Headphones } from 'lucide-react';
 import { getAllIPhones } from '@/shared/data/iphones';
 import { ProductImage } from '@/components/ui/optimized-image';
+import './page.scss';
 
 export default function HomePage() {
   const iphones = getAllIPhones();
@@ -15,8 +15,65 @@ export default function HomePage() {
   const intelligenceModels = ['iphone-17-pro', 'iphone-17-pro-max', 'iphone-16-pro', 'iphone-16-pro-max'];
   return (
     <main className="min-h-screen">
+      
+
+      {/* Apple.com Style Hero - iPhone 17 Pro */}
+      <section className="relative w-full min-h-screen overflow-hidden bg-black text-white">
+        <div className="relative w-full h-screen">
+          <div className="relative w-full h-full">
+            {/* Full-screen clickable link overlay */}
+            <Link
+              href="/iphone-17-pro"
+              className="absolute inset-0 z-10"
+              aria-hidden="true"
+              tabIndex={-1}
+            >
+              <span className="sr-only">Learn more about iPhone 17 Pro</span>
+            </Link>
+
+            {/* Content wrapper - positioned at top center */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20 text-center px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-20">
+              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-3 sm:mb-4">
+                iPhone 17 Pro
+              </h2>
+              <p className="text-2xl sm:text-3xl lg:text-4xl font-medium text-gray-300 mb-6 sm:mb-8">
+                Все на профессиональном уровне.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center relative z-30">
+                <Link
+                  href="/iphone-17-pro"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 h-11 rounded-full text-base font-semibold transition-colors shadow-lg flex items-center justify-center"
+                  aria-label="Learn more, iPhone 17 Pro"
+                >
+                  Узнать больше
+                </Link>
+
+                <Link
+                  href="/catalog"
+                  className="bg-transparent border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 h-11 rounded-full text-base font-semibold transition-colors flex items-center justify-center"
+                  aria-label="Buy, iPhone 17 Pro"
+                >
+                  Купить
+                </Link>
+              </div>
+            </div>
+
+            {/* Image at bottom - natural size */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-0">
+              <figure
+                className="unitImageIphone17Pro"
+                role="img"
+                aria-label="iPhone 17 Pro in cosmic orange finish, Pro Fusion camera system, 3 lenses, microphone, flash"
+              >
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Hero Section - iPhone 17 Pro */}
-      <section className="relative bg-black text-white overflow-hidden min-h-[550px] sm:min-h-[650px] lg:min-h-[700px] flex items-center">
+      {/* <section className="relative bg-black text-white overflow-hidden min-h-[550px] sm:min-h-[650px] lg:min-h-[700px] flex items-center">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900 blur-3xl"></div>
         </div>
@@ -54,7 +111,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* iPhone 17 Banner with Background */}
       <section className="relative bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 dark:from-pink-950/20 dark:via-purple-950/20 dark:to-blue-950/20 overflow-hidden min-h-[500px] sm:min-h-[600px] lg:min-h-[650px] flex items-center">
@@ -128,14 +185,14 @@ export default function HomePage() {
 
             {/* Mac */}
             <Link
-              href="/catalog"
+              href="/mac"
               className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 p-8 hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
               <div className="flex flex-col items-center text-center space-y-4">
                 <Laptop className="w-12 h-12 text-gray-600" />
                 <div>
                   <h3 className="text-xl font-bold mb-1">Mac</h3>
-                  <p className="text-sm text-muted-foreground">Скоро в продаже</p>
+                  <p className="text-sm text-muted-foreground">От 67 990 ₽</p>
                 </div>
               </div>
             </Link>

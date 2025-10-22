@@ -1,16 +1,16 @@
 import Link from 'next/link';
-import styles from './Logo.module.css';
+import './Logo.scss';
 import { OptimizedImage } from '@/components/ui/optimized-image';
 
 export function Logo() {
   return (
-    <Link href="/" className={styles.logo}>
-      <div className={styles.logoImageContainer}>
+    <Link href="/" className="logo">
+      <div className="logoImageContainer">
         <OptimizedImage
           src="images/logo.svg"
           alt="iPhone Shik Logo"
           priority
-          className={styles.logoImage}
+          className="logoImage"
         />
       </div>
     </Link>
