@@ -25,7 +25,7 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-[1001] w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" role="banner">
+      <header className="sticky top-0 z-[1001] w-full border-b bg-white p-1" role="banner">
         <div className="container mx-auto flex h-11 items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Logo - Left */}
           <div className="flex items-center">

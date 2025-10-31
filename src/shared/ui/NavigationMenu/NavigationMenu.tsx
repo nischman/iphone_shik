@@ -30,15 +30,12 @@ export function NavigationMenuComponent() {
 
   return (
     <NavigationMenu>
-      <NavigationMenuList className="gap-4 xl:gap-8">
+      <NavigationMenuList>
         {NAVIGATION_ITEMS.map((navItem) => (
           <NavigationMenuItem key={navItem.href}>
             {navItem.hasDropdown ? (
               <>
-                <NavigationMenuTrigger
-                  showChevron={false}
-                  className="text-sm xl:text-[17px] font-normal bg-transparent hover:bg-transparent hover:text-foreground focus:bg-transparent data-[state=open]:bg-transparent data-[active]:bg-transparent px-2"
-                >
+                <NavigationMenuTrigger>
                   {navItem.label}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -57,7 +54,7 @@ export function NavigationMenuComponent() {
               <NavigationMenuLink asChild>
                 <Link
                   href={navItem.href}
-                  className={cn(navigationMenuTriggerStyle(), 'text-sm xl:text-[17px] font-normal bg-transparent hover:bg-transparent hover:text-foreground px-2')}
+                  className={navigationMenuTriggerStyle()}
                 >
                   {navItem.label}
                 </Link>

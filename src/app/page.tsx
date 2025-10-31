@@ -33,17 +33,17 @@ export default function HomePage() {
 
             {/* Content wrapper - positioned at top center */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20 text-center px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-20">
-              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-3 sm:mb-4">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-3 sm:mb-4">
                 iPhone 17 Pro
               </h2>
-              <p className="text-2xl sm:text-3xl lg:text-4xl font-medium text-gray-300 mb-6 sm:mb-8">
+              <p className="text-xl sm:text-2xl lg:text-3xl font-medium text-gray-300 mb-5 sm:mb-6">
                 Все на профессиональном уровне.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center relative z-30">
+              <div className="flex flex-col sm:flex-row gap-3 justify-center items-center relative z-30">
                 <Link
                   href="/iphone-17-pro"
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 h-11 rounded-full text-base font-semibold transition-colors shadow-lg flex items-center justify-center"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 h-10 rounded-full text-sm font-semibold transition-colors shadow-lg flex items-center justify-center"
                   aria-label="Learn more, iPhone 17 Pro"
                 >
                   Узнать больше
@@ -51,7 +51,7 @@ export default function HomePage() {
 
                 <Link
                   href="/catalog"
-                  className="bg-transparent border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 h-11 rounded-full text-base font-semibold transition-colors flex items-center justify-center"
+                  className="bg-transparent border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 h-10 rounded-full text-sm font-semibold transition-colors flex items-center justify-center"
                   aria-label="Buy, iPhone 17 Pro"
                 >
                   Купить
@@ -59,8 +59,8 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Image at bottom - natural size */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-0">
+            {/* Image at bottom - Apple style panoramic */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-0 w-full flex justify-center overflow-hidden">
               <figure
                 className="unitImageIphone17Pro"
                 role="img"

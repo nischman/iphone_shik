@@ -3,6 +3,7 @@
 import { useState, useEffect, FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useCartStore, useOrderStore } from '@/shared/lib/store';
 import { PhoneInput } from '@/shared/ui/PhoneInput/PhoneInput';
 import { Button } from '@/shared/ui/Button';
@@ -349,9 +350,11 @@ export default function CheckoutPage() {
                       {items.map((item) => (
                         <div key={item.id} className="flex gap-3 pb-3 border-b border-border last:border-0">
                           <div className="w-16 h-16 rounded bg-muted flex-shrink-0">
-                            <img
+                            <Image
                               src={item.image}
                               alt={item.name}
+                              width={64}
+                              height={64}
                               className="w-full h-full object-cover rounded"
                             />
                           </div>

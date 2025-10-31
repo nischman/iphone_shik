@@ -3,9 +3,30 @@
 }
 
 .unitImageIphone17Pro {
-  background-image: url(/images/iphone-17-pro-max.jpg);
-  background-size: contain;
+  width: 3008px;
+  height: 692px;
+  background-size: 3008px 692px;
   background-repeat: no-repeat;
-  width: 100%;
-  height: 100vh;
+  background-position: center bottom;
+  background-image: url(/images/iphone-17-pro-max.jpg);
+
+  // Retina display support
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+         only screen and (min-resolution: 1.5dppx),
+         only screen and (min-resolution: 144dpi) {
+    background-image: url(/images/iphone-17-pro-max.jpg);
+  }
+
+  // Responsive для меньших экранов
+  @media only screen and (max-width: 1068px) {
+    width: 1686px;
+    height: 692px;
+    background-size: 1686px 692px;
+  }
+
+  @media only screen and (max-width: 734px) {
+    width: 1686px;
+    height: 692px;
+    background-size: 1686px 692px;
+  }
 }
