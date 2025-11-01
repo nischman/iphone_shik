@@ -21,29 +21,19 @@ export default function HomePage() {
       <section className="first-section relative w-full overflow-hidden bg-black text-white">
         <div className="first-section__inner relative w-full h-screen">
           <div className="relative w-full h-full">
-            {/* Full-screen clickable link overlay */}
-            <Link
-              href="/iphone-17-pro"
-              className="absolute inset-0 z-10"
-              aria-hidden="true"
-              tabIndex={-1}
-            >
-              <span className="sr-only">Learn more about iPhone 17 Pro</span>
-            </Link>
-
             {/* Content wrapper - positioned at top center */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20 text-center px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-20">
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-3 sm:mb-4">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20 text-center px-6 sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-20 w-full max-w-4xl">
+              <h2 className="hero-headline text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-3 sm:mb-4 whitespace-nowrap">
                 iPhone 17 Pro
               </h2>
-              <p className="text-xl sm:text-2xl lg:text-3xl font-medium text-gray-300 mb-5 sm:mb-6">
+              <p className="hero-subtitle text-xl sm:text-2xl lg:text-3xl font-medium text-gray-300 mb-3 sm:mb-4 whitespace-nowrap">
                 Все на профессиональном уровне.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-3 justify-center items-center relative z-30">
+              <div className="flex flex-row gap-3 justify-center items-center relative z-30 flex-wrap">
                 <Link
                   href="/iphone-17-pro"
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 h-10 rounded-full text-sm font-semibold transition-colors shadow-lg flex items-center justify-center"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 h-10 rounded-full text-sm font-medium transition-colors shadow-lg flex items-center justify-center whitespace-nowrap"
                   aria-label="Learn more, iPhone 17 Pro"
                 >
                   Узнать больше
@@ -51,7 +41,7 @@ export default function HomePage() {
 
                 <Link
                   href="/catalog"
-                  className="bg-transparent border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 h-10 rounded-full text-sm font-semibold transition-colors flex items-center justify-center"
+                  className="bg-transparent border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 h-10 rounded-full text-sm font-medium transition-colors flex items-center justify-center whitespace-nowrap"
                   aria-label="Buy, iPhone 17 Pro"
                 >
                   Купить
@@ -65,6 +55,51 @@ export default function HomePage() {
                 className="unitImageIphone17Pro"
                 role="img"
                 aria-label="iPhone 17 Pro in cosmic orange finish, Pro Fusion camera system, 3 lenses, microphone, flash"
+              >
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Apple.com Style Hero - iPhone Air */}
+      <section className="air-section relative w-full overflow-hidden bg-white text-black">
+        <div className="air-section__inner relative w-full h-screen">
+          <div className="relative w-full h-full">
+            {/* Content wrapper - positioned at top center */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20 text-center px-6 sm:px-6 lg:px-8 pt-6 sm:pt-12 lg:pt-16 w-full max-w-4xl">
+              <h2 className="air-headline text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-3 sm:mb-4 whitespace-nowrap">
+                iPhone Air
+              </h2>
+              <p className="air-subtitle text-xl sm:text-2xl lg:text-3xl font-medium text-gray-700 mb-3 sm:mb-4">
+                Самый тонкий iPhone в истории.<br />С мощью Pro внутри.
+              </p>
+
+              <div className="flex flex-row gap-3 justify-center items-center relative z-30 flex-wrap">
+                <Link
+                  href="/iphone-air"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 h-10 rounded-full text-sm font-medium transition-colors shadow-lg flex items-center justify-center whitespace-nowrap"
+                  aria-label="Learn more, iPhone Air"
+                >
+                  Узнать больше
+                </Link>
+
+                <Link
+                  href="/catalog"
+                  className="bg-transparent border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 h-10 rounded-full text-sm font-medium transition-colors flex items-center justify-center whitespace-nowrap"
+                  aria-label="Buy, iPhone Air"
+                >
+                  Купить
+                </Link>
+              </div>
+            </div>
+
+            {/* Image at bottom - Apple style panoramic */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-0 w-full flex justify-center overflow-hidden">
+              <figure
+                className="unitImageIphoneAir"
+                role="img"
+                aria-label="Side view of iPhone Air, showing very thin titanium side"
               >
               </figure>
             </div>
@@ -91,7 +126,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
-              <Button size="lg" asChild className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-8 h-12 text-base font-semibold shadow-lg hover:shadow-xl transition-shadow">
+              <Button size="lg" asChild className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-8 h-12 text-base font-medium shadow-lg hover:shadow-xl transition-shadow">
                 <Link href="/catalog">
                   Купить
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -101,7 +136,7 @@ export default function HomePage() {
                 size="lg"
                 variant="outline"
                 asChild
-                className="border-2 border-blue-600 text-blue-600 bg-transparent hover:bg-blue-600 hover:text-white rounded-full px-8 h-12 text-base font-semibold"
+                className="border border-blue-600 text-blue-600 bg-transparent hover:bg-blue-600 hover:text-white rounded-full px-8 h-12 text-base font-medium"
               >
                 <Link href="/catalog">Узнать больше</Link>
               </Button>
@@ -129,7 +164,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-              <Button size="lg" asChild variant="default" className="rounded-full px-8 h-12 text-base font-semibold shadow-lg hover:shadow-xl transition-shadow">
+              <Button size="lg" asChild variant="default" className="rounded-full px-8 h-12 text-base font-medium shadow-lg hover:shadow-xl transition-shadow">
                 <Link href="/catalog">
                   Купить
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -139,7 +174,7 @@ export default function HomePage() {
                 size="lg"
                 variant="outline"
                 asChild
-                className="border-2 border-blue-600 text-blue-600 bg-transparent hover:bg-blue-600 hover:text-white rounded-full px-8 h-12 text-base font-semibold"
+                className="border border-blue-600 text-blue-600 bg-transparent hover:bg-blue-600 hover:text-white rounded-full px-8 h-12 text-base font-medium"
               >
                 <Link href="/catalog">Узнать больше</Link>
               </Button>
@@ -243,7 +278,7 @@ export default function HomePage() {
                   size="lg"
                   variant="secondary"
                   asChild
-                  className="bg-white text-orange-600 hover:bg-gray-100 rounded-full px-8 h-12 text-base font-semibold"
+                  className="bg-white text-orange-600 hover:bg-gray-100 rounded-full px-8 h-12 text-base font-medium"
                 >
                   <Link href="/about">
                     Узнать больше
@@ -264,7 +299,7 @@ export default function HomePage() {
                   size="lg"
                   variant="secondary"
                   asChild
-                  className="bg-white text-blue-600 hover:bg-gray-100 rounded-full px-8 h-12 text-base font-semibold"
+                  className="bg-white text-blue-600 hover:bg-gray-100 rounded-full px-8 h-12 text-base font-medium"
                 >
                   <Link href="/about">
                     Узнать условия
@@ -449,7 +484,7 @@ export default function HomePage() {
           <p className="text-lg sm:text-xl text-gray-300 mb-8 sm:mb-10 max-w-3xl mx-auto">
             13 моделей на выбор - от классического iPhone 11 до новейшего iPhone 17 Pro Max
           </p>
-          <Button size="lg" asChild className="bg-white text-black hover:bg-gray-200 rounded-full px-10 h-14 text-lg font-semibold">
+          <Button size="lg" asChild className="bg-white text-black hover:bg-gray-200 rounded-full px-10 h-14 text-lg font-medium">
             <Link href="/catalog">
               Смотреть каталог
               <ArrowRight className="ml-2 h-6 w-6" />

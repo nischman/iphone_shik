@@ -1,5 +1,9 @@
 .first-section__inner {
   height: 692px;
+
+  @media only screen and (max-width: 734px) {
+    height: 540px;
+  }
 }
 
 .unitImageIphone17Pro {
@@ -25,8 +29,110 @@
   }
 
   @media only screen and (max-width: 734px) {
+    width: 1468px;
+    height: 1000px;
+    background-size: 734px 500px;
+    background-image: url(/images/mob_iphone_17_pro.jpg);
+  }
+}
+
+// Apple-style responsive typography for hero headline
+.hero-headline {
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  @media only screen and (max-width: 1068px) {
+    font-size: 48px !important;
+    line-height: 1.08349 !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.002em !important;
+  }
+
+  @media only screen and (max-width: 734px) {
+    font-size: 32px !important;
+    line-height: 1.125 !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.004em !important;
+  }
+}
+
+// Responsive typography for hero subtitle
+.hero-subtitle {
+  @media only screen and (max-width: 734px) {
+    font-size: 17px !important;
+    line-height: 1.29412 !important;
+    font-weight: 400 !important;
+    letter-spacing: -0.022em !important;
+  }
+}
+
+// iPhone Air Section Styles
+.air-section {
+  margin-top: 12px;
+}
+
+.air-section__inner {
+  height: 692px;
+
+  @media only screen and (max-width: 734px) {
+    height: 500px;
+  }
+}
+
+.unitImageIphoneAir {
+  width: 3008px;
+  height: 692px;
+  background-size: 3008px 692px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-image: url(/images/iphone_air.jpg);
+
+  // Retina display support
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+         only screen and (min-resolution: 1.5dppx),
+         only screen and (min-resolution: 144dpi) {
+    background-image: url(/images/iphone_air.jpg);
+  }
+
+  // Responsive для меньших экранов
+  @media only screen and (max-width: 1068px) {
     width: 1686px;
     height: 692px;
     background-size: 1686px 692px;
+  }
+
+  @media only screen and (max-width: 734px) {
+    width: 1468px;
+    height: 1000px;
+    background-size: 734px 500px;
+    background-image: url(/images/mob_iphone_air.jpg);
+  }
+}
+
+// Apple-style responsive typography for Air headline
+.air-headline {
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  @media only screen and (max-width: 1068px) {
+    font-size: 48px !important;
+    line-height: 1.08349 !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.002em !important;
+  }
+
+  @media only screen and (max-width: 734px) {
+    font-size: 32px !important;
+    line-height: 1.125 !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.004em !important;
+  }
+}
+
+// Responsive typography for Air subtitle
+.air-subtitle {
+  @media only screen and (max-width: 734px) {
+    font-size: 17px !important;
+    line-height: 1.29412 !important;
+    font-weight: 400 !important;
+    letter-spacing: -0.022em !important;
   }
 }

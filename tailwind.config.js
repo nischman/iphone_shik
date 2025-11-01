@@ -30,6 +30,12 @@ module.exports = {
           'sans-serif',
         ],
       },
+      fontWeight: {
+        normal: '400',
+        medium: '500',
+        semibold: '500',
+        bold: '600',
+      },
       fontSize: {
         'xs': ['0.75rem', { lineHeight: '1rem', letterSpacing: '0.01em' }],
         'sm': ['0.875rem', { lineHeight: '1.25rem', letterSpacing: '0.01em' }],
